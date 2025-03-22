@@ -42,6 +42,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import SampleQuestionsPage from "./components/SampleQuestion";
 
 // Root layout component to include Navbar and Outlet
 const RootLayout = () => {
@@ -77,7 +78,7 @@ function App() {
         },
         {
           path: "/sample-questions",
-          element: <div>Sample Questions</div>,
+          element: <SampleQuestionsPage />,
         },
       ],
       errorElement: <div>404 - Page Not Found</div>, // Fallback for invalid routes
