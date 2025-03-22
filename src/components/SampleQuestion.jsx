@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import "./SampleQuestionsPage.css"; // Import your CSS
 
 const SampleQuestionsPage = () => {
   const [code, setCode] = useState("");
@@ -20,7 +19,6 @@ const SampleQuestionsPage = () => {
       <h1>Sample Questions</h1>
 
       <div className="content-container">
-        {/* Left Side: Question Description */}
         <div className="question-section">
           <h2>Question 1</h2>
           <p>Write a function in JavaScript to reverse a string.</p>
@@ -33,7 +31,6 @@ const SampleQuestionsPage = () => {
           </p>
         </div>
 
-        {/* Right Side: Code Editor */}
         <div className="editor-section">
           <CodeMirror
             value={code}
@@ -48,22 +45,23 @@ const SampleQuestionsPage = () => {
         </div>
       </div>
 
-      {/* Answer Pop-up */}
-      <div className={`answer-popup ${showAnswer ? "active" : ""}`}>
-        <div className="popup-content">
-          <h3>Correct Answer</h3>
-          <pre>
-            <code>
-              {`function reverseString(str) {
+      {showAnswer && (
+        <div className="answer-popup">
+          <div className="popup-content">
+            <h3>Correct Answer</h3>
+            <pre>
+              <code>
+                {`function reverseString(str) {
   return str.split('').reverse().join('');
 }`}
-            </code>
-          </pre>
-          <button className="close-btn" onClick={handleClosePopup}>
-            Close
-          </button>
+              </code>
+            </pre>
+            <button className="close-btn" onClick={handleClosePopup}>
+              Close
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
