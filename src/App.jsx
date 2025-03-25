@@ -43,6 +43,7 @@ import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import SampleQuestionsPage from "./components/SampleQuestion";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Root layout component to include Navbar and Outlet
 const RootLayout = () => {
@@ -85,7 +86,12 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <SpeedInsights />
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;
