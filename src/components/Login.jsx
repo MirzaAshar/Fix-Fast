@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { LoginUser } from "../services/service";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -92,7 +93,7 @@ const Login = () => {
       </form>
 
       <div className="login-link">
-        Don't have an account? <a href="/register">Register here</a>
+        Don't have an account? <Link to="/register">Register here</Link>
       </div>
     </div>
   );

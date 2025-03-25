@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { RegisterUser } from "../services/service";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -116,7 +117,7 @@ const Register = () => {
       </form>
 
       <div className="login-link">
-        Already registered? <a href="/login">Login here</a>
+        Already registered? <Link to="/login">Login here</Link>
       </div>
     </div>
   );
