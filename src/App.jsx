@@ -88,8 +88,8 @@ function App() {
 
   return (
     <div>
-      <SpeedInsights />
       <RouterProvider router={router} />
+      <SpeedInsights />
     </div>
   );
 }
